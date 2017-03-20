@@ -1,0 +1,164 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans','Roboto', sans-serif;
+  text-align: center;
+  font-weight: lighter;
+}
+
+.head {
+  width: 100%;
+  height: 100px;
+  background: rgb(160, 79, 198);
+  margin: 0;
+  color: white;
+  overflow-x: hidden;
+}
+
+h1 {
+  margin: 0;
+  position: relative;
+  margin-top: 20px;
+  font-size: 45px;
+
+
+}
+
+nav ul {
+  list-style-type: none;
+  text-align: center;
+  background: rgb(160, 79, 198);
+  margin: 0;
+  padding: 0px;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 0px 15px 10px 5px;
+  font-size: 32px;
+  color: rgb(69, 18, 92);
+  -webkit-transition: 0.7s;
+  transition-property: color;
+  font-weight: 400;
+  text-shadow: 1px 1px 0px rgb(160, 79, 198);
+}
+
+nav ul li a {
+  -webkit-transition: 0.7s;
+  margin: 0;
+}
+
+#cumli {
+  border-right: none;
+}
+
+nav ul li a:hover, nav ul li a:focus, .currentPage {
+  color: white;
+  -webkit-transition: 0.4s;
+  text-shadow: 2px 2px 5px rgb(69, 18, 92);
+}
+
+.currentPage {
+  color: white;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#pa {
+  font-size: 22px;
+  text-align: center;
+  width: 430px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.textBox {
+  border: none;
+  outline: none;
+  border-bottom: 2px solid grey;
+  width: 250px;
+  font-size: 32px;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+  transition-property: border-bottom;
+  margin-bottom: 20px;
+}
+
+.textBox:focus {
+  border-bottom: 2px solid purple;
+  transition: 0.4s;
+  -webkit-transition: 0.4s;
+}
+
+::-webkit-input-placeholder {
+  font-size: 23px;
+  font-weight: lighter;
+  font-family: sans-serif;
+}
+
+#button {
+  background: rgb(160, 79, 198);
+  border: none;
+  color: white;
+  font-size: 21px;
+  font-family: 'Roboto';
+  padding: 12px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  -webkit-transition: 0.5s;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  border-radius: 2px;
+  /* text-shadow: 2px 2px 5px rgb(69, 18, 92); */
+
+}
+
+/* #button:hover {
+
+  border: 2px solid rgb(189, 112, 226);
+	color: white;
+	-webkit-transition: 0.5s;
+} */
+
+#button:hover {
+  -webkit-transition: box-shadow 0.7s ease-in-out;
+  -webkit-transition: 0.5s;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  background: rgb(189, 112, 226);
+}
+
+#button:focus {
+  outline: none;
+}
+
+footer {
+  height: 150px;
+  width: 100%;
+  overflow: hidden;
+  background: #152d40;
+  color: white;
+}
+footer p {
+  font-size: 22px;
+  font-family: 'Open Sans';
+  position: relative;
+  top: 10px;
+  font-family:
+}
+
+footer img {
+  background: white;
+  border-radius: 10px;
+  -webkit-transition: 0.7s;
+}
+
+footer img:hover {
+  -webkit-filter: invert(100%);
+  -webkit-transition: 0.4s ease-in-out;
+
+}
+footer p a {
+  font-weight: bold;
+}

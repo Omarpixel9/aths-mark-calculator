@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!-- This is a calculator
+that calculates the final average
+of marks using JavaScript -->
+<html>
+
+<head>
+    <link rel="stylesheet" href="marks.css" />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Roboto" rel="stylesheet">
+    <style>
+    #button {
+    border: none;
+    background: #1565C0;
+  }
+
+  #button:hover {
+    -webkit-transition: 0.5s;
+    background: #2878d4;
+  }
+
+  .head {
+    background: #1565C0;
+  }
+
+  nav ul {
+    background: #1565C0;
+  }
+
+  nav ul li {
+    color: #063061;
+    text-shadow: 0px 0px 0px #05203e;
+  }
+
+  nav ul li a:hover, nav ul li a:focus, .currentPage {
+    color: white;
+    -webkit-transition: 0.4s;
+    text-shadow: 2px 2px 2px #124b8c;
+  }
+
+  .currentPage {
+    text-shadow: 2px 2px 2px #124b8c;
+  }
+
+  .textBox:focus {
+    border-bottom: 2px solid #1565C0;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+  }
+    </style>
+</head>
+
+<body>
+
+    <div class="head">
+        <h1>Marks Calculator</h1>
+    </div>
+
+    <nav>
+      <ul>
+      <li><a href="term1.html" class="currentPage">Term 1</a></li>
+      <li><a href="index.html">Term 2</a></li>
+      <li><a href="term3.html">Term 3</a></li>
+      <li id="cumli"><a href="final.html">Cumulative</a></li>
+      </ul>
+    </nav>
+    <p id="pa">
+        You are now calculating Term 1's final average mark for one subject (or however you wanna use it).
+    </p>
+
+    <form id="leForm">
+      <input type="number" id="cw" alt="classwork" class="textBox" placeholder="Classwork" autocomplete="off"  /><br />
+      <input type="number" id="hw" class="textBox" placeholder="Homework" autocomplete="off" /><br />
+      <input type="number" id="proj" class="textBox" placeholder="Project" autocomplete="off" /><br />
+      <input type="number" id="quizzes" class="textBox" placeholder="Quizzes" autocomplete="off" /><br />
+      <input type="number" id="swq" class="textBox" placeholder="System-Wide Quiz 1" autocomplete="off" /><br />
+      <input type="number" id="swq2" class="textBox" placeholder="End of Term 1" autocomplete="off" /><br />
+      <input type="button" id="button" onclick="calculateMarks() ;" } value="CALCULATE" />
+      <input type="button" id="button" onclick="clearAll() ;" } value="CLEAR ALL" style="margin-left: 10px;" />
+    </form>
+
+    <p id="haha" style="font-size: 29px; font-weight: lighter; width: 590px; text-align: center; display: block; margin-left: auto; margin-right: auto; margin-bottom: 50px; margin-top: 50px;"> Your result will be displayed here. </p>
+
+    <footer>
+      <p>
+        Made with ❤ by <a href="http://www.twitter.com/Omarpixel9" >@Omarpixel9</a>
+      </p>
+      <img src="logo.png" width="120px" />
+    </footer>
+
+    <script>
+// make it so it checks less equal than 100
+    function calculateMarks() {
+      var form = document.forms['leForm'];
+      var cw = form.elements['cw'];
+      var hw = form.elements['hw'];
+      var proj = form.elements['proj'];
+      var quiz = form.elements['quizzes'];
+      var swq = form.elements['swq'];
+	  var swq2 = form.elements['swq2'];
+      var cwMark = parseInt(cw.value);
+      var hwMark = parseInt(hw.value);
+	  var projMark = parseInt(proj.value);
+	  var quizMark = parseInt(quiz.value);
+	  var swqMark = parseInt(swq.value);
+	  var swq2Mark = parseInt(swq2.value);
+
+		var x = document.getElementById('haha');
+		var result = 0.05*cwMark + 0.05*hwMark + 0.1*projMark + 0.15*quizMark + 0.15*swqMark + 0.50*swq2Mark;
+		var y = document.getElementById('result');
+
+    if((cwMark && hwMark && projMark && quizMark && swqMark && swq2Mark) <= 100) {
+      x.innerHTML = "Your final average is: "+result;
+    }
+
+		else {
+			x.innerHTML = "An error has occured. Please only use values below or equal to 100. Make sure you fill all of the fields.";
+    }
+
+
+
+	}
+
+  function clearAll() {
+    var form = document.forms['leForm'];
+    var cw = form.elements['cw'];
+    var hw = form.elements['hw'];
+    var proj = form.elements['proj'];
+    var quiz = form.elements['quizzes'];
+    var swq = form.elements['swq'];
+    var swq2 = form.elements['swq2'];
+    var x = document.getElementById('haha');
+
+  cw.value = "";
+  hw.value = "";
+  proj.value = "";
+  quiz.value = "";
+  swq.value = "";
+  swq2.value = "";
+  x.innerHTML = "Cleared. Your new result will be shown here."
+
+  }
+
+    </script>
+</body>
+
+</html>

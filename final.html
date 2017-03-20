@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<!-- This is a calculator
+that calculates the final average
+of marks using JavaScript -->
+<html>
+
+<head>
+    <link rel="stylesheet" href="marks.css" />
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Roboto" rel="stylesheet">
+    
+    <style>
+    #button {
+    border: none;
+    background: #152d40;
+    }
+
+    #button:hover {
+    background: #356990;
+    }
+
+    .head {
+    background: #152d40;
+    }
+
+    nav ul {
+    background: #152d40;
+    }
+
+    nav ul li {
+    color: #7092ac;
+    text-shadow: 0px 0px 0px #5c161d;
+    }
+
+    nav ul li a:hover, nav ul li a:focus, .currentPage {
+      color: white;
+      -webkit-transition: 0.4s;
+      text-shadow: 2px 2px 2px #0b1c29;
+    }
+
+    .textBox:focus {
+    border-bottom: 2px solid #152d40;
+    transition: 0.4s;
+    -webkit-transition: 0.4s;
+    }
+    </style>
+</head>
+
+<body>
+
+    <div class="head">
+        <h1>Marks Calculator</h1>
+    </div>
+
+    <nav>
+      <ul>
+      <li><a href="term1.html">Term 1</a></li>
+      <li><a href="index.html">Term 2</a></li>
+      <li><a href="term3.html">Term 3</a></li>
+      <li id="cumli" class="currentPage"><a href="final.html">Cumulative</a></li>
+      <li><a href="">?</a></li>
+      </ul>
+    </nav>
+    <p id="pa">
+      You are now calculating the final average mark for one subject (or however you wanna use it).
+
+    </p>
+
+    <form id="leForm">
+      <input type="number" id="t1" alt="term1" class="textBox" placeholder="Term 1" autocomplete="off"  /><br />
+      <input type="number" id="t2" class="textBox" placeholder="Term 2" autocomplete="off" /><br />
+      <input type="number" id="t3" class="textBox" placeholder="Term 3" autocomplete="off" /><br />
+      <input type="number" id="SAT" class="textBox" placeholder="SAT (out of 100)" autocomplete="off" /><br />
+      <input type="number" id="EoY" class="textBox" placeholder="End of Year" autocomplete="off" /><br />
+      <input type="button" id="button"  value="CALCULATE" onclick="calculateMarks()" />
+      <input type="button" id="button"  value="CLEAR ALL" onclick="clearAll()"style="margin-left: 10px;"  /> </br>
+      <input type="button" id="button"  value="CALCULATE WITHOUT SAT" onclick="withoutSAT()" style="margin-right: 4px;" />
+
+      <p id="haha" style="font-size: 29px; font-weight: lighter; width: 590px; text-align: center; display: block; margin-left: auto; margin-right: auto; margin-bottom: 50px; margin-top: 50px;"> Your result will be displayed here. </p>
+
+      <footer>
+        <p>
+          Made with ❤ by <a href="http://www.twitter.com/Omarpixel9" >@Omarpixel9</a>
+        </p>
+        <img src="logo.png" width="120px" />
+      </footer>
+<!-- JavaScript Starts Here -->
+      <script>
+      function calculateMarks() {
+        var form = document.forms['leForm'];
+        var tf1 = form.elements['t1'];
+        var tf2 = form.elements['t2'];
+        var tf3 = form.elements['t3'];
+        var SAT = form.elements['SAT'];
+        var EoY = form.elements['EoY'];
+
+        var t1 = parseInt(tf1.value);
+        var t2 = parseInt(tf2.value);
+        var t3 = parseInt(tf3.value);
+        var SATm = parseInt(SAT.value);
+        var EoY = parseInt(EoY.value);
+
+        var x = document.getElementById('haha');
+        var result = (0.3 * t1) + (0.2 * t2) + (0.2 * t3) + (0.1 * SATm) + (0.2 * EoY);
+
+        if ((t1 && t2 && t3 && SATm && EoY) <= 100) {
+         x.innerHTML = "Your final average is: "+result;
+        }
+
+        else {
+        x.innerHTML = "An error has occured. Please only use values below or equal to 100. Make sure you fill all of the fields.";
+        }
+
+      }
+
+      function  withoutSAT() {
+        var form = document.forms['leForm'];
+        var tf1 = form.elements['t1'];
+        var tf2 = form.elements['t2'];
+        var tf3 = form.elements['t3'];
+        var EoY = form.elements['EoY'];
+
+        var t1 = parseInt(tf1.value);
+        var t2 = parseInt(tf2.value);
+        var t3 = parseInt(tf3.value);
+        var EoY = parseInt(EoY.value);
+
+        var x = document.getElementById('haha');
+        var result = (0.3 * t1) + (0.2 * t2) + (0.2 * t3) + (0.3 * EoY);
+
+        if ((t1 && t2 && t3 && EoY) <= 100  ) {
+         x.innerHTML = "Your final average is: "+result;
+        }
+
+        else {
+          x.innerHTML = "An error has occured. Please only use values below or equal to 100. Make sure you fill all of the fields.";
+        }
+      }
+
+      function clearAll() {
+        var form = document.forms['leForm'];
+        var tf1 = form.elements['t1'];
+        var tf2 = form.elements['t2'];
+        var tf3 = form.elements['t3'];
+        var SAT = form.elements['SAT'];
+        var EoY = form.elements['EoY'];
+
+        var x = document.getElementById('haha');
+
+        form.value = "";
+        tf1.value = "";
+        tf2.value = "";
+        tf3.value = "";
+        SAT.value = "";
+        EoY.value = "";
+        x.innerHTML = "Cleared. Your new result will be shown here."
+      }
+      </script>
+      <!-- JavaScript Ends Here -->
+</body>
+
+</html>
