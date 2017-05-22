@@ -7,46 +7,6 @@ of marks using JavaScript -->
 <head>
     <link rel="stylesheet" href="marks.css" />
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans|Roboto" rel="stylesheet">
-    <style>
-    #button {
-    border: none;
-    background: #1565C0;
-  }
-
-  #button:hover {
-    -webkit-transition: 0.5s;
-    background: #2878d4;
-  }
-
-  .head {
-    background: #1565C0;
-  }
-
-  nav ul {
-    background: #1565C0;
-  }
-
-  nav ul li {
-    color: #063061;
-    text-shadow: 0px 0px 0px #05203e;
-  }
-
-  nav ul li a:hover, nav ul li a:focus, .currentPage {
-    color: white;
-    -webkit-transition: 0.4s;
-    text-shadow: 2px 2px 2px #124b8c;
-  }
-
-  .currentPage {
-    text-shadow: 2px 2px 2px #124b8c;
-  }
-
-  .textBox:focus {
-    border-bottom: 2px solid #1565C0;
-    transition: 0.4s;
-    -webkit-transition: 0.4s;
-  }
-    </style>
 </head>
 
 <body>
@@ -57,14 +17,14 @@ of marks using JavaScript -->
 
     <nav>
       <ul>
-      <li><a href="term1.html" class="currentPage">Term 1</a></li>
-      <li><a href="term2.html">Term 2</a></li>
+      <li><a href="term1.html">Term 1</a></li>
+      <li><a href="term2.html" class="currentPage">Term 2</a></li>
       <li><a href="index.html">Term 3</a></li>
       <li id="cumli"><a href="final.html">Cumulative</a></li>
       </ul>
     </nav>
     <p id="pa">
-        You are now calculating Term 1's final average mark for one subject (or however you wanna use it).
+      You are now calculating Term 2's final average mark for one subject (or however you wanna use it).
     </p>
 
     <form id="leForm">
@@ -73,7 +33,7 @@ of marks using JavaScript -->
       <input type="number" id="proj" class="textBox" placeholder="Project" autocomplete="off" /><br />
       <input type="number" id="quizzes" class="textBox" placeholder="Quizzes" autocomplete="off" /><br />
       <input type="number" id="swq" class="textBox" placeholder="System-Wide Quiz 1" autocomplete="off" /><br />
-      <input type="number" id="swq2" class="textBox" placeholder="End of Term 1" autocomplete="off" /><br />
+      <input type="number" id="swq2" class="textBox" placeholder="System-Wide Quiz 2" autocomplete="off" /><br />
       <input type="button" id="button" onclick="calculateMarks() ;" } value="CALCULATE" />
       <input type="button" id="button" onclick="clearAll() ;" } value="CLEAR ALL" style="margin-left: 10px;" />
     </form>
@@ -105,7 +65,7 @@ of marks using JavaScript -->
 	  var swq2Mark = parseInt(swq2.value);
 
 		var x = document.getElementById('haha');
-		var result = 0.05*cwMark + 0.05*hwMark + 0.1*projMark + 0.15*quizMark + 0.15*swqMark + 0.50*swq2Mark;
+		var result = 0.05*cwMark + 0.05*hwMark + 0.1*projMark + 0.15*quizMark + 0.30*swqMark + 0.35*swq2Mark;
 		var y = document.getElementById('result');
 
     if((cwMark && hwMark && projMark && quizMark && swqMark && swq2Mark) <= 100) {
